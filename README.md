@@ -66,7 +66,7 @@
 
 **Требования:** браузер на базе Chromium версии **116 или новее** (Chrome; Edge и Brave должны работать, но не проверялись).
 
-1. Скачай проект: **Code → Download ZIP** на странице репозитория (или `git clone`) и распакуй.
+1. Скачай проект: **Code → Download ZIP** "https://github.com/INTROLMMORTAL/yt-clip-recorder/archive/refs/heads/main.zip" на странице репозитория (или `git clone`) и распакуй.
 2. Открой `chrome://extensions`.
 3. Включи **«Режим разработчика»** (справа вверху).
 4. Нажми **«Загрузить распакованное»** и выбери папку, в которой лежит `manifest.json`.
