@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 340px; margin: 0; padding: 14px; font: 13px system-ui, sans-serif; background: #17181c; color: #e8e8ec; }
+  h1 { font-size: 14px; margin: 0 0 4px; }
+  #title { color: #9a9aa5; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  label { display: block; margin: 10px 0 4px; color: #b5b5c0; }
+  .row { display: flex; gap: 6px; }
+  input[type=text] { flex: 1; padding: 7px 8px; background: #23252b; color: inherit; border: 1px solid #34363e; border-radius: 6px; font: inherit; }
+  button { padding: 7px 10px; background: #2d3038; color: inherit; border: 1px solid #3c3f48; border-radius: 6px; cursor: pointer; font: inherit; }
+  button:hover { background: #383c46; }
+  #go { width: 100%; margin-top: 12px; padding: 10px; background: #3b82f6; border-color: #3b82f6; font-weight: 600; }
+  #stop { width: 100%; margin-top: 8px; background: #7a2a2a; border-color: #8f3a3a; }
+  button:disabled { opacity: .5; cursor: default; }
+  .chk { display: flex; gap: 6px; align-items: center; margin-top: 10px; color: #b5b5c0; }
+  #status { margin-top: 10px; min-height: 18px; word-break: break-word; }
+  .ok { color: #5fd38d; } .err { color: #ff7b7b; } .dim { color: #9a9aa5; }
+  .hint { margin-top: 10px; font-size: 11px; color: #7d7d88; line-height: 1.4; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+  <h1>YT Clip Recorder</h1>
+  <div id="title" class="dim">…</div>
+
+  <label>Начало (пусто = с начала)</label>
+  <div class="row"><input id="start" type="text" placeholder="0:00"><button id="setStart" title="Взять текущее время плеера">⏱</button></div>
+
+  <label>Конец (пусто = до конца видео)</label>
+  <div class="row"><input id="end" type="text" placeholder="3:25.5"><button id="setEnd" title="Взять текущее время плеера">⏱</button></div>
+
+  <div class="row" style="margin-top:10px"><button id="preview" style="flex:1">▶ Прослушать фрагмент</button></div>
+
+  <label class="chk"><input id="fade" type="checkbox" checked> Сглаживание краёв 15 мс (без щелчков)</label>
+
+  <button id="go">● Записать и сохранить WAV</button>
+  <button id="stop" hidden>■ Остановить и сохранить</button>
+  <div id="status"></div>
+  <div class="hint">Запись идёт в реальном времени (столько, сколько длится фрагмент). Не ставь на паузу, не меняй вкладку и не двигай ползунок. Файл: Загрузки/YT-Audio.</div>
+  <script src="popup.js"></script>
+</body>
+</html>

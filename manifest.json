@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "YT Clip Recorder",
+  "version": "1.0",
+  "description": "Записывает выбранный фрагмент аудио с YouTube в WAV 24 bit (без потерь относительно воспроизводимого потока)",
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YT Clip Recorder",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabCapture",
+    "offscreen",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://music.youtube.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
